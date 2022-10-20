@@ -211,16 +211,16 @@ for i in range(len(yrs)-4):
     fset = FieldSet.from_nemo(filenames, variables, dimensions, allow_time_extrapolation =True, transpose=False)#field_chunksize=False)
     print('Field set - Done')
 
-    filenamesM = {'lon': mesh_file_h, 'lat': mesh_file_h,'depth':filesW[0], 'data':filesM1}
-    Mu = Field.from_netcdf(filenamesM, 'umask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
-    Mv = Field.from_netcdf(filenamesM, 'vmask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
-    Mf = Field.from_netcdf(filenamesM, 'fmask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
-    Mt = Field.from_netcdf(filenamesM, 'tmask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
+    #filenamesM = {'lon': mesh_file_h, 'lat': mesh_file_h,'depth':filesW[0], 'data':filesM1}
+    #Mu = Field.from_netcdf(filenamesM, 'umask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
+    #Mv = Field.from_netcdf(filenamesM, 'vmask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
+    #$Mf = Field.from_netcdf(filenamesM, 'fmask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
+    #Mt = Field.from_netcdf(filenamesM, 'tmask', {'lon': 'glamf', 'lat': 'gphif', 'depth': 'depthw', 'time':'t'}, timestamps = Liste_times)
     
-    fset.add_field(Mu)
-    fset.add_field(Mv)
-    fset.add_field(Mf)
-    fset.add_field(Mt)
+    #fset.add_field(Mu)
+    #fset.add_field(Mv)
+    #fset.add_field(Mf)
+    #fset.add_field(Mt)
 
 
 
