@@ -204,7 +204,7 @@ for yr in range(1993,2017):
     labels_all = []
     for sep in range(0,lats_all.shape[0],500) :
         print(sep,'/',lats_all.shape[0])
-        lats_all_l = lats_all[sep:sep+501,:] ; lons_all_l = lons_all[sep:sep+501,:]
+        lats_all_l = lats_all[sep:sep+500,:] ; lons_all_l = lons_all[sep:sep+500,:]
     
         labels, X_reduced =  run_script(prefixe_kernel, ntest, norm, t, resamp, length_days, wtype, n_clusters, kernel, lats_all_l, lons_all_l, lats_train, lons_train, path_save, name_kernels_pca, X_centers_train)
 
