@@ -37,11 +37,11 @@ def run_adv_journalier_sensitivity(tup):
 
     exp = str(nmb_h)+'_'+str(nmb_z)+'_'+str(dt)+'_'+str(dr)+'_'+str(year)+'_'
     i_file = 0
-    fname = '/storage/nplanat/Glorys12_OP_journalier/ADV_'+exp+'%i_' %i_file 
+    fname ='/mnt/shackleton/storage3/nplanat/OP/ADV_'+exp+'%i_' %i_file #'/storage/nplanat/Glorys12_OP_journalier/ADV_'+exp+'%i_' %i_file 
     if os.path.exists(fname):
         i_file +=1
         print('ERROR : this experiment already exist !!!! ')
-        fname = '/storage/nplanat/Glorys12_OP_journalier/ADV_'+exp+'%i_' %i_file
+        fname ='/mnt/shackleton/storage3/nplanat/OP/ADV_'+exp+'%i_' %i_file
     print(fname)    
 
     #--------------------------------------------------
@@ -213,7 +213,7 @@ def run_adv_journalier_sensitivity(tup):
 
         Lats = np.repeat(np.linspace(65.59, 66.04, nmb_h), nmb_z)
         Lons = np.repeat(np.linspace(-168.09, -169.62, nmb_h), nmb_z)
-        Depths = np.array([np.linspace(0, 60, nmb_z) for i in range(nmb_h)]).reshape((nmb_h*nmb_z))
+        Depths = np.array([np.linspace(0, 90, nmb_z) for i in range(nmb_h)]).reshape((nmb_h*nmb_z))
 
         repeatdt = delta(days=1) # release a new set of particles every day
 
@@ -233,7 +233,7 @@ def run_adv_journalier_sensitivity(tup):
 
         pset.execute(kernels, runtime=delta(days=30), dt=delta(minutes = dt), output_file=output_file, verbose_progress=True)
         pset.repeatdt = None
-        pset.execute(kernels, runtime=delta(days=365), dt=delta(minutes = dt), output_file=output_file, verbose_progress=True)
+        pset.execute(kernels, runtime=delta(days=3*365), dt=delta(minutes = dt), output_file=output_file, verbose_progress=True)
         #pset.repeatdt = delta(days=1) 
         #pset.execute(kernels, runtime=delta(days=30), dt=delta(minutes = dt), output_file=output_file, verbose_progress=True)
         #pset.repeatdt = None
